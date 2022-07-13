@@ -1,0 +1,45 @@
+.card_image {
+    width: 165px;
+    height: 155px;
+    padding: 5px;
+    border-radius: 100px;
+    margin: auto;
+}
+
+.card_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card_castom {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+.card_resources {
+    border-radius: 100px;
+}
+
+.card-body {
+    border-radius: 100px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.resources_list {
+    margin: 40px 0 20px 30px;
+}
+
+.user_list {
+    margin: 40px 0 0 30px;;
+}

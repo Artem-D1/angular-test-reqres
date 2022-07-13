@@ -1,0 +1,38 @@
+
+
+<div class="card form_user_castom" *ngIf="!isRegister">
+    <h3>Авторизация</h3>
+    <form>
+        <div class="form-group">
+            <input type="email" placeholder="Введите email"
+            class="form-control" 
+            [(ngModel)]="autorForm.email" name="email">
+            <br>
+            <input type="password" placeholder="Введите пароль"
+            class="form-control" [(ngModel)]="autorForm.password" minlength="3" name="password">
+            <br>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="autorisation()">Войти</button>
+        <button type="button" class="btn-sm btn-outline-primary reg_btn" (click)="showRegisterForm()">Регистрация</button>
+    </form>
+</div>
+
+<div class="card form_user_castom" *ngIf="isRegister">
+    <h3>Регистрация</h3>
+    <form>
+        <div class="form-group">
+            <input type="email" placeholder="Введите email"
+            class="form-control" 
+            [(ngModel)]="registForm.email" name="email">
+            <br>
+            <input type="password" placeholder="Введите пароль"
+            class="form-control" [(ngModel)]="registForm.password" minlength="3" name="password">
+            <br>
+            <input type="password" placeholder="Повторите пароль"
+            class="form-control" [(ngModel)]="registForm.passwordAgain" minlength="3" name="password">
+            <br>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="doRegistration()">Регистрация</button>
+        <button type="button" class="btn-sm btn-outline-primary reg_btn" (click)="showRegisterForm()">Авторизация</button>
+    </form>
+</div>

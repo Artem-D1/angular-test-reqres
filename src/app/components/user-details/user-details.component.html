@@ -1,0 +1,43 @@
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/users">Главная</a>
+      <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/">Выход</a>
+    </nav>
+</div>
+
+<div class="card card_user_castom">
+    <img class="card-img-top user_image_castom" src={{user?.avatar}} alt="Card image cap">
+    <div class="user_info_container">
+        <div class="card-body col-md-8">
+            <h5 class="card-title">{{user?.first_name}}</h5>
+            <p class="card-text">{{user?.last_name}}</p>
+            <p class="card-text"><small class="text-muted">{{user?.email}}</small></p>
+        </div>
+        <div class="col-md-4 change_btn_container">
+            <button type="button" class="btn btn-outline-primary" (click)="showEdit()">Изменить</button>
+        </div>
+    </div>
+</div>
+
+<div class="card form_user_castom" *ngIf="isEdit">
+    <form>
+        <div class="form-group">
+            <input type="text" placeholder="Ссылка на фото"
+            class="form-control" 
+            [(ngModel)]="user.avatar" name="avatar">
+            <br>
+            <input type="text" placeholder="Имя пользователя"
+            class="form-control" [(ngModel)]="user.first_name" name="first_name">
+            <br>
+            <input type="text" placeholder="Фамилия пользователя"
+            class="form-control" [(ngModel)]="user.last_name" name="last_name">
+            <br>
+            <input type="email" placeholder="Email пользователя"
+            class="form-control" [(ngModel)]="user.email" name="email">
+            <br>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" (click)="save()">Сохранить изменения</button>
+        </div>
+    </form>
+</div>

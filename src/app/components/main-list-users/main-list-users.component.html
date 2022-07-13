@@ -1,0 +1,30 @@
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/">Выход</a>
+    </nav>
+</div>
+
+<h4 class="user_list">User list</h4>
+<div class="card_container">
+    <div class="card card_castom" style="width: 12rem;" *ngFor="let user of users">
+        <img class="card-img-top card_image" src={{user.avatar}} alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{user.first_name}}</h5>
+            <p class="card-text">{{user.last_name}}</p>
+            <a routerLink="/user/{{user.id}}" class="btn btn-primary">Подробнее</a>
+            <button type="button" class="btn btn-outline-secondary btn-sm" (click)="delete(user)">Удалить</button>
+        </div>
+    </div>
+</div>
+
+
+<h4 class="resources_list">Resources List</h4>
+<div class="card_container">
+    <div class="card bg-light mb-3 card_resources" style="width: 12rem;" *ngFor="let resource of resources">
+        <div class="card-body" [ngStyle]="{'background-color':  resource.color}">
+          <h5 class="card-title">{{resource.name}}</h5>
+          <p class="card-text">{{resource.year}}</p>
+          <p class="card-text"><small>{{resource.pantone_value}}</small></p>
+        </div>
+    </div>    
+</div>
